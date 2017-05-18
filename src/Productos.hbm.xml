@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2017 11:31:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Productos" table="productos" catalog="productos">
+        <id name="codp" type="int">
+            <column name="CODP" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="categorias" class="Categorias" fetch="select">
+            <column name="CODC" not-null="true" />
+        </many-to-one>
+        <property name="nombrep" type="string">
+            <column name="NOMBREP" length="50" not-null="true" />
+        </property>
+        <property name="tamano" type="int">
+            <column name="TAMANO" not-null="true" />
+        </property>
+        <property name="dosifica" type="string">
+            <column name="DOSIFICA" length="2" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
